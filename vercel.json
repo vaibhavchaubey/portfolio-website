@@ -6,6 +6,11 @@
       "permanent": false
     },
     {
+      "source": "/resume/download",
+      "destination": "https://drive.google.com/uc?export=download&id=177x83I82M6g-Mm3owQod4FX7LJ3T9jDR",
+      "permanent": false
+    },
+    {
       "source": "/linkedin",
       "destination": "https://linkedin.com/in/vaibhavchaubey",
       "permanent": false

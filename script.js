@@ -1,5 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // 0. Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon   = themeToggle.querySelector('i');
+
+    const applyTheme = (theme) => {
+        if (theme === 'light') {
+            document.body.classList.add('light-theme');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            document.body.classList.remove('light-theme');
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        }
+    };
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const isLight = document.body.classList.contains('light-theme');
+        const next    = isLight ? 'dark' : 'light';
+        localStorage.setItem('theme', next);
+        applyTheme(next);
+    });
+
     // 1. Set Copyright Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
